@@ -14,6 +14,12 @@
 extern crate algebra;
 extern crate fingertree;
 
+use algebra::{
+    M,
+    Magma,
+    Monoid,
+    Semigroup,
+};
 use fingertree::{
     Deep,
     Digit,
@@ -27,6 +33,40 @@ use fingertree::{
 };
 
 struct Offset(i32);
+
+impl std::num::Zero for Offset {
+    fn zero() -> Offset {
+        Offset(0i32)
+    }
+
+    fn is_zero(&self) -> bool {
+        let &Offset(ref i) = self;
+        i.is_zero()
+    }
+}
+
+impl std::ops::Add<Offset,Offset> for Offset {
+    fn add(&self, that:&Offset) -> Offset {
+        let &Offset(ref lhs) = self;
+        let &Offset(ref rhs) = that;
+        Offset(lhs.add(rhs))
+    }
+}
+
+impl Magma for Offset {
+    fn op(&self, rhs:&Offset) -> Offset {
+        self.add(rhs)
+    }
+}
+
+impl Semigroup for Offset {}
+
+impl Monoid for Offset {
+    fn nil() -> Offset {
+        std::num::Zero::zero()
+    }
+}
+
 struct Chunk(Vec<u8>);
 struct Body(FingerTree<Offset,Chunk>);
 struct Rope(Body);
