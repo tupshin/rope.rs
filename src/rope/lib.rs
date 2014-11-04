@@ -33,6 +33,7 @@ use fingertree::{
     Two,
 };
 
+#[deriving(Clone)]
 struct Offset(uint);
 
 impl std::num::Zero for Offset {
@@ -78,5 +79,12 @@ impl Measurable<Offset> for Chunk {
 }
 
 struct Body(FingerTree<Offset,Chunk>);
+
+impl Measurable<Offset> for Body {
+    fn measure(&self) -> Offset {
+        let &Body(ref tree) = self;
+        tree.measure()
+    }
+}
 
 struct Rope(Body);
