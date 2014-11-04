@@ -88,3 +88,16 @@ impl Measurable<Offset> for Body {
 }
 
 struct Rope(Body);
+
+impl Rope {
+    fn len(&self) -> uint {
+        let &Rope(ref body) = self;
+        let Offset(off) = body.measure();
+        off
+    }
+
+    fn is_empty(&self) -> bool {
+        let &Rope(Body(ref tree)) = self;
+        tree.is_empty()
+    }
+}
