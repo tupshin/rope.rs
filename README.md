@@ -6,7 +6,7 @@ Ropes in Rust
 
 ## Documentation
 
-See the API documentation [here](http://darinmorrison.github.io/rope.rs/doc/rope/).
+See the API documentation [here](http://www.rust-ci.org/darinmorrison/rope.rs/doc/rope/).
 
 ## Requirements
 
