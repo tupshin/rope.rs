@@ -34,7 +34,7 @@ use fingertree::{
 };
 
 #[deriving(Clone)]
-struct Offset(uint);
+pub struct Offset(uint);
 
 impl std::num::Zero for Offset {
     fn zero() -> Offset {
@@ -69,7 +69,7 @@ impl Monoid for Offset {
     }
 }
 
-struct Chunk(Vec<u8>);
+pub struct Chunk(Vec<u8>);
 
 impl Measurable<Offset> for Chunk {
     fn measure(&self) -> Offset {
@@ -78,7 +78,7 @@ impl Measurable<Offset> for Chunk {
     }
 }
 
-struct Body(FingerTree<Offset,Chunk>);
+pub struct Body(FingerTree<Offset,Chunk>);
 
 impl Measurable<Offset> for Body {
     fn measure(&self) -> Offset {
@@ -87,7 +87,7 @@ impl Measurable<Offset> for Body {
     }
 }
 
-struct Rope(Body);
+pub struct Rope(Body);
 
 impl Rope {
     fn len(&self) -> uint {
