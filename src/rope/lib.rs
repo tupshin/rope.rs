@@ -26,17 +26,18 @@ use fingertree::{
     Empty,
     FingerTree,
     Four,
+    Measurable,
     One,
     Single,
     Three,
     Two,
 };
 
-struct Offset(i32);
+struct Offset(uint);
 
 impl std::num::Zero for Offset {
     fn zero() -> Offset {
-        Offset(0i32)
+        Offset(0u)
     }
 
     fn is_zero(&self) -> bool {
@@ -68,5 +69,14 @@ impl Monoid for Offset {
 }
 
 struct Chunk(Vec<u8>);
+
+impl Measurable<Offset> for Chunk {
+    fn measure(&self) -> Offset {
+        let &Chunk(ref data) = self;
+        Offset(data.len())
+    }
+}
+
 struct Body(FingerTree<Offset,Chunk>);
+
 struct Rope(Body);
