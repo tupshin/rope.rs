@@ -2,11 +2,11 @@
 
 Ropes in Rust
 
-[![build status](https://api.travis-ci.org/darinmorrison/rope.rs.svg?branch=master)](https://travis-ci.org/darinmorrison/rope.rs)
+[![build status](https://api.travis-ci.org/epsilonz/rope.rs.svg?branch=master)](https://travis-ci.org/epsilonz/rope.rs)
 
 ## Documentation
 
-See the API documentation [here](http://www.rust-ci.org/darinmorrison/rope.rs/doc/rope/).
+See the API documentation [here](http://www.rust-ci.org/epsilonz/rope.rs/doc/rope/).
 
 ## Requirements
 

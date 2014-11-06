@@ -2,17 +2,17 @@
 
 name    = "rope"
 version = "0.0.0"
-authors = [ "Darin Morrison <darinmorrison+git@gmail.com>" ]
+authors = [ "Darin Morrison <darinmorrison+epsilonz@gmail.com>" ]
 
 [lib]
 name = "rope"
 path = "src/lib.rs"
 
 [dependencies.algebra]
-git = "https://github.com/darinmorrison/algebra.rs"
+git = "https://github.com/epsilonz/algebra.rs"
 
 [dependencies.fingertree]
-git = "https://github.com/darinmorrison/fingertree.rs"
+git = "https://github.com/epsilonz/fingertree.rs"
 
 # [dev-dependencies.criterion]
 # git = "https://github.com/japaric/criterion.rs"
