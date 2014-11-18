@@ -4,7 +4,6 @@
 //! Ropes based on persistent Finger Trees.
 
 use algebra::{
-    M,
     Magma,
     Monoid,
     Semigroup,
