@@ -1,6 +1,3 @@
-#![allow(dead_code)]
-#![allow(unused_imports)]
-
 //! Ropes based on persistent Finger Trees.
 
 use algebra::{
@@ -9,16 +6,8 @@ use algebra::{
     Semigroup,
 };
 use fingertree::persistent::{
-    Deep,
-    Digit,
-    Empty,
     FingerTree,
-    Four,
     Measurable,
-    One,
-    Single,
-    Three,
-    Two,
 };
 
 #[deriving(Clone)]
