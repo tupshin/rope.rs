@@ -1,8 +1,14 @@
 [package]
 
-name    = "rope"
+name = "rope"
 version = "0.0.0"
 authors = [ "Darin Morrison <darinmorrison+epsilonz@gmail.com>" ]
+description = "Ropes in Rust"
+documentation = "http://www.rust-ci.org/epsilonz/rope.rs/doc/rope/"
+keywords = ["data-structure", "persistent", "ropes", "strings", "text"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/epsilonz/rope.rs"
 
 [lib]
 name = "rope"
