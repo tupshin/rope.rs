@@ -19,15 +19,3 @@ git = "https://github.com/epsilonz/algebra.rs"
 
 [dependencies.fingertree]
 git = "https://github.com/epsilonz/fingertree.rs"
-
-# [dev-dependencies.criterion]
-# git = "https://github.com/japaric/criterion.rs"
-
-# [dev-dependencies.criterion_macros]
-# git = "https://github.com/japaric/criterion.rs"
-
-[dev-dependencies.quickcheck]
-git = "https://github.com/BurntSushi/quickcheck"
-
-[dev-dependencies.quickcheck_macros]
-git = "https://github.com/BurntSushi/quickcheck"
