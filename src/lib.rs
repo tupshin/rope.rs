@@ -6,7 +6,7 @@
 
 //! This crate implements the Rope data type.
 
-extern crate algebra;
+extern crate epsilonz_algebra;
 extern crate fingertree;
 
 pub mod persistent;

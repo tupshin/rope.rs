@@ -1,6 +1,6 @@
 //! Ropes based on persistent Finger Trees.
 
-use algebra::{
+use epsilonz_algebra::{
     Magma,
     Monoid,
     Semigroup,
