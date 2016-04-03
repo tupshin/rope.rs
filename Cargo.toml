@@ -15,6 +15,6 @@ name = "rope"
 path = "src/lib.rs"
 
 [dependencies]
-
-epsilonz_algebra = "*"
-fingertree = "*"
+algebra = { git = "https://github.com/bjz/algebra.git" }
+fingertree = { git = "https://github.com/tupshin/fingertree.rs.git" }
+missing_algebra = { git = "https://github.com/tupshin/missing_algebra-rs.git" }

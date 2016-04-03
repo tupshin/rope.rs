@@ -1,40 +1,40 @@
 //! Ropes based on persistent Finger Trees.
+use std::ops::Add;
 
-use epsilonz_algebra::{
+use fingertree::persistent::{
+    FingerTree,
+    Measurable,
     Magma,
     Monoid,
     Semigroup,
 };
-use fingertree::persistent::{
-    FingerTree,
-    Measurable,
-};
 
-#[deriving(Clone)]
-pub struct Offset(uint);
+#[derive(Clone)]
+pub struct Offset(usize);
 
 impl ::std::num::Zero for Offset {
     fn zero() -> Offset {
-        Offset(0u)
+        Offset(0usize)
     }
 
-    fn is_zero(&self) -> bool {
-        let &Offset(ref i) = self;
-        i.is_zero()
-    }
+//    fn is_zero(&self) -> bool {
+//        let &Offset(ref i) = self;
+//        i.is_zero()
+//    }
 }
 
-impl ::std::ops::Add<Offset,Offset> for Offset {
-    fn add(&self, that:&Offset) -> Offset {
-        let &Offset(ref lhs) = self;
-        let &Offset(ref rhs) = that;
+impl ::std::ops::Add<Offset> for Offset {
+	type Output = Offset;
+    fn add(self, that:Offset) -> Offset {
+        let Offset(ref lhs) = self;
+        let Offset(ref rhs) = that;
         Offset(lhs.add(rhs))
     }
 }
 
 impl Magma for Offset {
     fn op(&self, rhs:&Offset) -> Offset {
-        self.add(rhs)
+        self.clone().add(rhs.clone()) //FIXME are these clones necessary?
     }
 }
 
@@ -67,7 +67,7 @@ impl Measurable<Offset> for Body {
 pub struct Rope(Body);
 
 impl Rope {
-    fn len(&self) -> uint {
+    fn len(&self) -> usize {
         let &Rope(ref body) = self;
         let Offset(off) = body.measure();
         off
